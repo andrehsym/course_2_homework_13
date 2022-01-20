@@ -19,14 +19,22 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Employee add(String fullName, int department, int salary) {
         Employee newbie = new Employee(fullName, department, salary);
-        if (!StringUtils.isAlpha(fullName)) {
-            throw new BadRequestException();
-        } else if (employees.contains(newbie)) {
+//        if (!StringUtils.isAlpha(fullName)) {
+//            throw new BadRequestException();
+//        } else if (employees.contains(newbie)) {
+//            throw new EmployeeAlreadyExistsException();
+//        }
+        if (employees.contains(newbie)) {
             throw new EmployeeAlreadyExistsException();
         }
             employees.add(newbie);
             return newbie;
     }
+
+//    @Override
+//    public Employee addFullEmployee(Employee employee) {
+//        return add(employee.getFullName(), employee.getDepartment(), employee.getSalary());
+//    }
 
 
     @Override

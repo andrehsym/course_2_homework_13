@@ -9,11 +9,11 @@ public interface EmployeeService {
 
     Employee add(String fullName, int department, int salary);
 
+//    Employee addFullEmployee(Employee employee);
+
     Employee remove(String fullName, int department, int salary);
 
     Employee find(String fullName, int department, int salary);
-
-//    Employee findByName(String fullName);
 
     Set<Employee> printEmployeeList();
 
