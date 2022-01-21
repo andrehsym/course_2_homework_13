@@ -19,4 +19,5 @@ public interface EmployeeService {
 
     Set<Employee> getEmployees();
 
+    Set<Employee> getSetOfEmployees();
 }
