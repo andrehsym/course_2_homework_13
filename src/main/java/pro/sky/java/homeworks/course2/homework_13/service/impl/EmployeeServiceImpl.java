@@ -24,9 +24,17 @@ public class EmployeeServiceImpl implements EmployeeService {
         } else if (employees.contains(newbie)) {
             throw new EmployeeAlreadyExistsException();
         }
+//        if (employees.contains(newbie)) {
+//            throw new EmployeeAlreadyExistsException();
+//        }
             employees.add(newbie);
             return newbie;
     }
+
+//    @Override
+//    public Employee addFullEmployee(Employee employee) {
+//        return add(employee.getFullName(), employee.getDepartment(), employee.getSalary());
+//    }
 
 
     @Override
@@ -79,6 +87,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         for (Employee employee : employees) {
             System.out.println(employee);
         }
+        return employees;
+    }
+
+    @Override
+    public Set<Employee> getSetOfEmployees() {
         return employees;
     }
 }
